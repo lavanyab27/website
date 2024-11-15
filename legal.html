@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEGAL ACTION</title>
+  <style>
+    /* General Styling for Body */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 500vh; /* Increased height for scrolling */
+      background-color: black; /* Black background */
+      overflow-x: hidden;
+      color: white; /* White text color for readability */
+    }
+
+    /* Styling for Each Section (Container) */
+    .section {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      padding: 100px 0; /* Space between each section */
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black; /* Black background for each section */
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0); /* Make section appear in place */
+    }
+
+    /* Styling for Images */
+    .image-container {
+      width: 150%; /* Make image fill a portion of the screen */
+      max-width: 600px; /* Maximum width */
+      margin: 20px auto;
+      position: relative;
+    }
+
+    .image-container img {
+      width: 100%; /* Make image fill the container */
+      height: auto; /* Maintain aspect ratio */
+      opacity: 0;
+      transform: translateY(100px); /* Initially position image off-screen */
+      transition: opacity 1s ease, transform 1s ease;
+      object-fit: cover; /* Ensure the image fills the container */
+    }
+
+    .image-container.visible img {
+      opacity: 1;
+      transform: translateY(0); /* Image comes up into place */
+    }
+
+    /* New Section for smaller centered text */
+    .centered-text {
+  text-align: center;
+  font-size: 24px; /* Increased font size */
+  color: white;
+  margin: 50px 0;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+    /* Center align for Left and Right Aligned Section */
+    .left-right-section {
+      display: flex;
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center; /* Center align contents horizontally */
+      text-align: center; /* Center text */
+      width: 80%; /* Width adjustment, change as needed */
+      margin: 0 auto; /* Center-align the whole section */
+    }
+
+    /* Center alignment for image */
+    .left-right-section .image-container {
+      width: 70%; /* Adjust size as needed */
+      margin: 20px auto;
+    }
+
+    .left-right-section .text-container {
+      font-size: 24px; /* Adjust text size */
+      color: white;
+      margin: 20px 0; /* Spacing around text */
+    }
+
+    .section-1 {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* Adjust space between the images */
+    }
+
+    .left-image {
+      width: 35%; /* Smaller size for the left image */
+      max-width: 300px; /* Optional max-width for further control */
+    }
+
+    .right-image {
+      width: 55%; /* Larger size for the right image */
+      max-width: 500px; /* Optional max-width for further control */
+    }
+
+    .image-container img {
+      width: 100%; /* Ensure the image fills its container */
+      height: auto; /* Maintain aspect ratio */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1 -->
+  <div class="section section-1" id="section1">
+    <div class="image-container left-image">
+      <img src="legal2.jpg" alt="First Image">
+    </div>
+    <div class="image-container right-image">
+      <img src="legal1.jpg" alt="Second Image">
+    </div>
+  </div>
+
+  <!-- Centered Text Between Section 1 and Section 2 -->
+  <div class="centered-text">
+    <p>Samantha goes to lawyer. Lawyer askes her to fill a petition to get the video removed. She has to pay a huge amount of money.</p>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section section-2" id="section2">
+    <div class="image-container">
+      <img src="legal3.jpg" alt="Second Image">
+    </div>
+  </div>
+
+  <!-- Centered Text Between Section 2 and Section 3 -->
+  <div class="centered-text">
+    <p>They visit the court a few times, unable to get a hearing date. Meanwhile the video is sitting gathering views, but at least her company is supportive.</p>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section section-3" id="section3">
+    <div class="image-container">
+      <img src="legal.jpg" alt="Third Image">
+    </div>
+  </div>
+
+  <!-- Centered Text Between Section 3 and Section 4 -->
+  <div class="centered-text">
+    <p>They finally get a date. Her petition to get video taken down is approved and the court sends a notice.</p>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section section-4" id="section4">
+    <div class="image-container">
+      <img src="legal4.jpg" alt="Fourth Image">
+    </div>
+  </div>
+
+  <!-- Centered Text After Section 4 -->
+  <div class="centered-text">
+    <p>She and her colleagues celebrate her win. None of them had ever doubted her.</p>
+  </div>
+
+  <!-- Left and Right Aligned Section -->
+  <div class="left-right-section">
+    <div class="image-container">
+      <img src="legal5.jpg" alt="Fifth Image">
+    </div>
+    <div class="text-container">
+      <p>Samantha goes to therapy to heal from the fact that if she had taken a different route, her career might have been ruined. <br>Several people around the world don't have this type of courage or strength. A lot of people suicide by shame. A lot of people are either fired or resign from their jobs. Deepfakes should be taken to court and removed with court's permission.</p>
+    </div>
+  </div>
+   <a href="typing.html">
+    <button style="position:absolute; top:4880px; left:700px; font-size:30px; background-color:#d3d3d3; z-index:2;">GO BACK</button>
+  </a>
+
+  <script>
+    // Function to check if an element is in the viewport
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom >= 0;
+    }
+
+    // Add event listener for scroll
+    window.addEventListener('scroll', function() {
+      // Get all sections
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(function(section) {
+        if (isInViewport(section)) {
+          section.classList.add('visible'); // Add visible class when section is in viewport
+        }
+      });
+
+      // Get all image containers (for image animation)
+      const imageContainers = document.querySelectorAll('.image-container');
+      imageContainers.forEach(function(imageContainer) {
+        if (isInViewport(imageContainer)) {
+          imageContainer.classList.add('visible'); // Add visible class for the image
+        }
+      });
+    });
+
+    // Initial check on page load to trigger animation
+    window.dispatchEvent(new Event('scroll'));
+  </script>
+
+</body>
+</html>

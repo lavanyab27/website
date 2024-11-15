@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Gradient Text Style */
+    .gradient-text, .gradient-image {
+      font-size: 80px;
+      font-family: 'Castellar', sans-serif;
+      color: gold;
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10; /* High z-index for text to appear above */
+    }
+
+    /* Main Background Image Styling */
+    #main-image {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 98%;
+      z-index: 1; /* Lower z-index for the image */
+    }
+
+    /* Toggle Circle Styles */
+    .outer-circle, .fullscreen-circle {
+      width: 40px;
+      height: 40px;
+      border: 2px solid white;
+      border-radius: 50%;
+      position: absolute;
+      z-index: 11; /* High z-index to be above background and text */
+    }
+
+    /* Inner circle for sound toggle */
+    .inner-circle {
+      width: 15px;
+      height: 15px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none; /* Initially hidden */
+    }
+
+    /* Inner circle for full-screen toggle */
+    .fullscreen-inner-circle {
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none; /* Hidden by default */
+    }
+
+    /* Main Image Styling */
+    #main-image {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 1; /* Lower z-index for the image */
+    }
+	/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Centered "IMPOSTER IMAGE" Title -->
+  
+   <p class="gradient-text" style="font-size: 80px; text-align:center; position: absolute; top: 150px; left: 50%; transform: translateX(-50%); z-index: 10;">
+  <strong>IMPOSTER IMAGE</strong>
+</p>
+
+    
+  </div>
+
+  <!-- Centered Description Paragraph -->
+  <p style="position:absolute; text-align:center; left:50%; top:380px; transform: translateX(-50%); font-size:22px; font-family:Lucida Bright; color:white; z-index:2;">
+    Follow a woman's struggle to prove herself innocent when her deepfake has gone viral.<br>
+	How will she navigate? How will you navigate?
+  </p>
+
+  <p style="position:absolute; left:80px; bottom:10px; font-size:22px; font-family:Lucida Bright; color:white; z-index:2;"><strong>Sound</strong></p>
+  <p style="position:absolute; left:240px; bottom:10px; font-size:22px; font-family:Lucida Bright; color:white; z-index:2;"><strong>Full screen</strong></p>
+
+  <p style="position:absolute; left:1230px; font-size:22px; top:1470px;" class="gradient-text">Follow Samantha's journey</strong></p>
+  <p style="position:absolute; left:650px; font-size:52px; top:830px;" class="gradient-text"><strong>Who is Samantha?</strong></p>
+
+
+  <p style="position:absolute; text-align:center; left:50px; top:1000px; font-size:22px; font-family:Lucida Bright;font-size: 28px; color:white; z-index:2;">BIO - </p>
+  
+  <p style="position:absolute; text-align:left; left:150px; top:1010px;  font-family:Arial;font-size: 24px; color:white; z-index:2;">Samantha is a 31 years old woman working as a project manager<br>
+  in a tech firm. She comes from a Software development background, <br>
+  with 8 years of experience. During her time, <br>
+  she has gained respect for being honest and hardworking. </p>
+  
+  <p style="position:absolute; text-align:center; left:50px; top:1200px; font-size:22px; font-family:Lucida Bright;font-size: 28px; color:white; z-index:2;">LIKES - </p>
+  
+  <p style="position:absolute; text-align:left; left:170px; top:1210px;  font-family:Arial;font-size: 24px; color:white; z-index:2;">1. Networking<br>
+ 2. Being socially active<br>
+3. Technology and innovation</p>
+  
+  <p style="position:absolute; text-align:center; left:50px; top:1400px; font-size:22px; font-family:Lucida Bright;font-size: 28px; color:white; z-index:2;">DISLIKES - </p>
+  
+  <p style="position:absolute; text-align:left; left:200px; top:1410px;  font-family:Arial;font-size: 24px; color:white; z-index:2;">1.Stereotyping in Tech<br>
+ 2. Poor communication<br>
+3. Inefficiency</p>
+  
+<p style="position:absolute; text-align:center; left:450px; top:1570px; font-size:28px; font-family:Lucida Bright; color:white;">PERSONALITY</i></p>
+  <p style="position:absolute; text-align:center; left:40px; top:1680px; font-size:22px; font-family:Lucida Bright; color:white; z-index:2;"><i>Introvert</i></p>
+  <p style="position:absolute; text-align:center; left:240px; top:1680px; font-size:22px; font-family:Lucida Bright; color:white; z-index:2;"><i>Extrovert</i></p>
+  <p style="position:absolute; text-align:center; left:600px; top:1680px; font-size:22px; font-family:Lucida Bright; color:white; z-index:2;"><i>Thinking</i></p>
+  <p style="position:absolute; text-align:center; left:840px; top:1680px; font-size:22px; font-family:Lucida Bright; color:white; z-index:2;"><i>Feeling</i></p>
+
+  <a href="typing.html">
+    <button style="position:absolute; top:1580px; left:1200px; font-size:30px; background-color:#d3d3d3; z-index:2;">Start Game</button>
+  </a>
+
+  <!-- White Arrow (CSS-based) -->
+<div style="position:absolute; left:700px; top:650px; z-index:2; width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 30px solid white;"></div>
+
+  <!-- Main Background Image -->
+  <img id="main-image" src="Data.gif" alt="Main Background Image">
+  
+ <!-- Samantha Image with fade-in class -->
+<img src="samantha.jpg" alt="Description of Image" width="400" class="fade-in" id="samantha-image" style="position:absolute; left:1050px; top:1050px;">
+
+  <img src="user1.png" alt="Description of Image" width="200" style="position:absolute; left:90px; top:1740px;">
+  <img src="user1.png" alt="Description of Image" width="200" style="position:absolute; left:690px; top:1740px;">
+
+  <!-- Sound and Full-Screen Toggle Circles -->
+  <div class="outer-circle" id="toggle-circle" style="left:30px; bottom:30px;">
+    <div class="inner-circle"></div>
+  </div>
+
+  <div class="fullscreen-circle" id="fullscreen-circle" style="left:200px; bottom:30px;">
+    <div class="fullscreen-inner-circle"></div>
+  </div>
+  
+  <!-- Sound element to play/pause -->
+  <audio id="sound" src="sound.mp3" preload="auto"></audio>
+
+
+  <script>
+       const toggleCircle = document.getElementById('toggle-circle');
+    const fullscreenCircle = document.getElementById('fullscreen-circle');
+    const sound = document.getElementById('sound');
+    const innerCircle = toggleCircle.querySelector('.inner-circle');
+    const fullscreenInnerCircle = fullscreenCircle.querySelector('.fullscreen-inner-circle');
+
+    let isSoundActive = false;
+    let isFullscreenActive = false;
+
+    // Toggle sound inner circle when the outer circle is clicked
+    toggleCircle.addEventListener('click', function() {
+      if (isSoundActive) {
+        toggleCircle.classList.remove('active');
+        sound.pause();
+        sound.currentTime = 0; // Reset sound
+      } else {
+        toggleCircle.classList.add('active');
+        sound.play();
+      }
+      isSoundActive = !isSoundActive; // Toggle the state
+    });
+
+
+    // Full-screen functionality
+    fullscreenCircle.addEventListener('click', function() {
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      } else if (document.documentElement.mozRequestFullScreen) {
+        document.documentElement.mozRequestFullScreen();
+      } else if (document.documentElement.webkitRequestFullscreen) {
+        document.documentElement.webkitRequestFullscreen();
+      } else if (document.documentElement.msRequestFullscreen) {
+        document.documentElement.msRequestFullscreen();
+      }
+      
+      fullscreenInnerCircle.style.display = isFullscreenActive ? 'none' : 'block';
+      isFullscreenActive = !isFullscreenActive;
+    });
+	// Create the intersection observer
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Add the "visible" class when the image comes into view
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target); // Stop observing once the image is visible
+    }
+  });
+}, {
+  threshold: 0.5 // Trigger when 50% of the image is in the viewport
+});
+
+// Target the image for observation
+const samanthaImage = document.getElementById('samantha-image');
+observer.observe(samanthaImage);
+
+  </script>
+
+</body>
+</html>
+

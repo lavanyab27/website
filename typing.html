@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typewriter Effect with Border and Scroll Down GIF</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: black;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+      width: 80%;
+      border-left: 3px solid white;
+      border-right: 3px solid white;
+      padding: 0 20px;
+      margin-top: 20vh;
+    }
+
+    .typewriter {
+      color: white;
+      font-family: monospace;
+      font-size: 24px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    #scrollDownGif {
+      display: none;
+      margin-top: 10px;
+      width: 300px;
+      margin: 20px auto;
+    }
+
+    #scrollText {
+      display: none;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .typewriter::after {
+      content: "|";
+      animation: blink-caret 0.5s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      from, to { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .section {
+      position: relative;
+      margin-top: 39vh;
+      left: -350px;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .section-right {
+      position: relative;
+      margin-top: -45vh;
+      left: 350px;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .section-new {
+      position: relative;
+      margin-top: 50vh;
+      left: 350px;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .section-new-gif {
+      position: relative;
+      margin-top: -70vh;
+      left: -350px;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .section-buttons {
+      position: relative;
+      margin-top: 50vh;
+      opacity: 0;
+      text-align: center;
+      transition: opacity 1s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    #additionalImage {
+      position: absolute;
+      left: 0;
+      margin-left: 30px; 
+      top: 100px;
+    }
+
+    .section-buttons div {
+      position: absolute;
+      right: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      top: 100px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      margin: 50px 0;
+      background-color: white;
+      color: black;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .button:hover {
+      background-color: gray;
+      color: white;
+    }
+
+    #button2 {
+      margin-right: 100px;
+    }
+
+    .image {
+      opacity: 1;
+    }
+
+    /* Dialogue Boxes */
+    .dialogue-box {
+      position: absolute; /* Keeps the dialogue box in place */
+      background-color: grey;
+      border-radius: 10px;
+      padding: 15px;
+      width: 300px;
+      max-width: 80%;
+      color: black;
+      display: none; /* Hidden by default */
+      opacity: 0;
+      transition: opacity 1s ease;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      z-index: 10;
+    }
+
+    #dialogueRight {
+      top: 125%;
+      right: 10%;
+    }
+
+    #dialogueLeft {
+      top: 125%;
+      left: 20%;
+    }
+
+    #dialogueNew {
+      top: 250%;
+      left: 70%;
+      transform: translateX(-50%);
+    }
+
+    #dialogueNewLast {
+      top: 360%;
+      left: 40%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div id="typewriter" class="typewriter"></div>
+  </div>
+
+  <div id="scrollText">Scroll down to explore more!</div>
+  <img id="scrollDownGif" src="arrow.gif" alt="Scroll Down">
+
+  <div class="section" id="sectionLeft">
+    <img src="d.jpg" alt="Animated Image" class="image" id="animatedImageLeft" width="300">
+  </div>
+
+  <div class="section-right" id="sectionRight">
+    <img src="c.jpg" alt="Second Animated Image" class="image" id="animatedImageRight" width="600">
+  </div>
+
+  <div class="section-new" id="sectionNew">
+  <a href="https://www.youtube.com/watch?v=ERVjW978ygI">
+    <img src="music.jpg" alt="New Animated Image" class="image" id="animatedImageNew" width="500">
+	</a>
+  </div>
+
+  <div class="dialogue-box" id="dialogueNew">
+    <p id="dialogueTextNew"></p>
+  </div>
+
+  <div class="section-new-gif" id="sectionNewGif">
+    <img src="WhatsApp Image 2024-11-15 at 03.52.10_18540913.jpg" alt="Another Animated GIF" class="image" id="animatedImageNewGif" width="400">
+  </div>
+
+  <div class="dialogue-box" id="dialogueRight">
+    <p id="dialogueTextRight"></p>
+  </div>
+
+  <div class="dialogue-box" id="dialogueLeft">
+    <p id="dialogueTextLeft"></p>
+  </div>
+
+  <div class="section-buttons" id="sectionButtons">
+    <img src="e.jpg" alt="Additional Image" class="image" id="additionalImage" width="500">
+    <div>
+	<a href="panic.html">
+      <button id="button1" class="button">PANIC</button>
+	  </a>
+	  <a href="hr.html">
+      <button id="button2" class="button">GO TO HR</button>
+	  </a>
+	  <a href="legal.html"
+      <button id="button3" class="button">LEGAL ACTION</button>
+	  </a>
+    </div>
+  </div>
+
+  <div class="dialogue-box" id="dialogueNewLast">
+    <p id="dialogueTextNewLast"></p>
+  </div>
+
+  <script>
+    const text = `It was a good morning. Samantha had just found out that she might get a promotion.
+    She and her friend, Isha, are sitting in her office.
+    Isha looks tense. When Samantha asks, Isha speaks up.`;  
+
+    const speed = 50; 
+    let index = 0;
+    const typewriterElement = document.getElementById("typewriter");
+    const scrollDownGif = document.getElementById("scrollDownGif");
+    const scrollText = document.getElementById("scrollText");
+
+    function typeWriter() {
+      if (index < text.length) {
+        const char = text.charAt(index);
+        
+        if (char === '\n') {
+          typewriterElement.innerHTML += "<br>";
+        } else {
+          typewriterElement.innerHTML += char;
+        }
+        
+        index++;
+        setTimeout(typeWriter, speed);
+      } else {
+        scrollDownGif.style.display = "block";
+        scrollText.style.display = "block";
+      }
+    }
+
+    typeWriter();
+
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    // Modified typeDialogue function
+    function typeDialogue(dialogueElement, text, callback) {
+      // Clear the existing content before starting to type the new text
+      dialogueElement.innerHTML = ''; // Clear previous text
+
+      let index = 0;
+      function type() {
+        if (index < text.length) {
+          dialogueElement.innerHTML += text.charAt(index); // Type one character at a time
+          index++;
+          setTimeout(type, 50); // Delay for the next character
+        } else {
+          callback(); // Run the callback when typing is done
+        }
+      }
+      type(); // Start the typing process
+    }
+
+    let dialogueNewShown = false;
+    let dialogueNewLastShown = false;
+
+    function handleDialogue() {
+      const sectionLeft = document.getElementById('sectionLeft');
+      const sectionRight = document.getElementById('sectionRight');
+      const sectionNew = document.getElementById('sectionNew');
+      const sectionNewGif = document.getElementById('sectionNewGif');
+      const sectionButtons = document.getElementById('sectionButtons');
+
+      const dialogueRight = document.getElementById('dialogueRight');
+      const dialogueLeft = document.getElementById('dialogueLeft');
+      const dialogueNew = document.getElementById('dialogueNew');
+      const dialogueNewLast = document.getElementById('dialogueNewLast');
+
+      const dialogueTextRight = 'Did you check your social media? There\'s a video going viral of you taking bribe! I DID NOT EXPECT THIS FROM YOU!!';
+      const dialogueTextLeft = 'WHAT VIDEO?! I Haven\'t done anything. Show the video!';
+      const dialogueTextNew = 'Samantha couldn\'t believe her eyes. It was her! But she was innocent! (Click below image to see video)';
+      const dialogueTextNewLast = 'You\'ve three paths to choose for Samantha and her next steps. Each path will have it\'s own consequences. You can restart the same as well.';
+
+      if (isInViewport(sectionLeft) && isInViewport(sectionRight)) {
+        sectionLeft.style.opacity = '1';
+        sectionRight.style.opacity = '1';
+        if (!dialogueRight.classList.contains('visible')) {
+          dialogueRight.style.display = 'block';
+          dialogueRight.classList.add('visible');
+          dialogueRight.style.opacity = '1';
+          typeDialogue(dialogueRight.querySelector('p'), dialogueTextRight, () => {
+            dialogueLeft.style.display = 'block';
+            dialogueLeft.style.opacity = '1';
+            typeDialogue(dialogueLeft.querySelector('p'), dialogueTextLeft, () => {}); // No further action after this
+          });
+        }
+      }
+
+      if (isInViewport(sectionNew) && !dialogueNewShown) {
+        sectionNew.style.opacity = '1';
+        dialogueNew.style.display = 'block';
+        dialogueNew.style.opacity = '1';
+        dialogueNewShown = true;
+        typeDialogue(dialogueNew.querySelector('p'), dialogueTextNew, () => {}); // Show "Samantha couldn\'t believe her eyes. It was her! But she was innocent! (Click below image to see video)"
+      }
+
+      if (isInViewport(sectionNewGif)) {
+        sectionNewGif.style.opacity = '1';
+      }
+
+      if (isInViewport(sectionButtons)) {
+        sectionButtons.style.opacity = '1';
+      }
+
+      if (isInViewport(sectionButtons) && !dialogueNewLastShown) {
+        dialogueNewLast.style.display = 'block';
+        dialogueNewLast.style.opacity = '1';
+        dialogueNewLastShown = true;
+        typeDialogue(dialogueNewLast.querySelector('p'), dialogueTextNewLast, () => {}); // Show "That sounds like a good idea!"
+      }
+    }
+
+    window.addEventListener('scroll', handleDialogue);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll-triggered Image Animation</title>
+  <style>
+    /* General Styling for Body */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 600vh; /* Increased height for scrolling */
+      background-color: black; /* Black background */
+      overflow-x: hidden;
+      color: white; /* White text color for readability */
+    }
+
+    /* Styling for Each Section (Container) */
+    .section {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      padding: 100px 0; /* Space between each section */
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black; /* Black background for each section */
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0); /* Make section appear in place */
+    }
+
+    /* Styling for Images */
+    .image-container {
+      width: 500%; /* Make image fill a portion of the screen */
+      max-width: 700px; /* Maximum width */
+      margin: 20px auto;
+      position: relative;
+    }
+
+    .image-container img {
+      width: 100%; /* Make image fill the container */
+      height: auto; /* Maintain aspect ratio */
+      opacity: 0;
+      transform: translateY(100px); /* Initially position image off-screen */
+      transition: opacity 1s ease, transform 1s ease;
+      object-fit: cover; /* Ensure the image fills the container */
+    }
+
+    .image-container.visible img {
+      opacity: 1;
+      transform: translateY(0); /* Image comes up into place */
+    }
+
+    /* New Section for smaller centered text */
+    .centered-text {
+  text-align: center;
+  font-size: 24px; /* Increased font size */
+  color: white;
+  margin: 50px 0;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+    /* Adjust maroon-box to use flex properties */
+    .maroon-box {
+      background-color: maroon;
+      width: 80%;
+      height: 700px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Space between h2, text, and images */
+      padding: 20px;
+      box-sizing: border-box;
+      align-items: center;
+    }
+
+    /* New container to align image frames at the bottom */
+    .image-frame-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end; /* Align frames to the bottom of the container */
+    }
+
+    /* Image Frames Section */
+    .image-frames {
+      display: flex;
+      justify-content: center;
+      width: 90%; /* Use full width of the box */
+      gap: 20px; /* Space between image frames */
+    }
+
+    .image-frame {
+      width: 38%;
+      height: 95%;
+      background-color: #000;
+      overflow: hidden;
+      border: 2px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Feedback Text Styling */
+    .feedback-text {
+      color: white;
+      text-align: center;
+      font-size: 24px;
+      display: none;
+      margin-top: 20px;
+    }
+
+     /* New Section with Two Images (Left and Right) */
+  .two-image-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+  }
+
+  .left-box {
+  width: 35%;
+  height: 600px; /* Set to your desired height */
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  margin-left: 40px; /* Adjust this value to shift the box right */
+}
+
+
+  .left-box h2 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .left-box img {
+    width: 70%;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .right-image {
+    width: 40%; /* Increase the width of the container to make the image larger */
+}
+
+.right-image img {
+    width: 100%; /* Ensure the image fills the new container size */
+    height: auto;
+}
+
+  .section-3 .image-container {
+  width: 100%; /* Make the image container larger for this section */
+  max-width: 1200px; /* Adjust to desired maximum width */
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Section 1 -->
+  <div class="section section-1" id="section1">
+    <div class="image-container">
+      <img src="Untitled (15).jpg" alt="First Image">
+    </div>
+  </div>
+
+  <!-- Centered Text Between Section 1 and Section 2 -->
+  <div class="centered-text">
+    <p>Samantha goes to the HR. They set up a meetin to solve the issue.<br>
+	All of them are skeptical about the negative press image.</p>
+  </div>
+
+  <div class="section section-2" id="section2">
+  <div class="maroon-box">
+    <h2 style=" font-size:50px; font-family:Lucida Bright; color:Black;"> How to spot Deepfakes?</h2>
+    <p style="font-size:22px; font-family:Lucida Bright; color:white;">1. Unnatural Skin Texture      2. Inconsistant lighting <br>  3. Background Inconsistencies   4. Blurry Texture
+	<br>
+	<br>Guess which is a Deepfake..</p>
+    <div class="image-frame-container">
+      <div class="image-frames">
+        <div class="image-frame" id="image1">
+          <img src="image.png" alt="Image 1">
+        </div>
+        <div class="image-frame" id="image2">
+          <img src="image2.png" alt="Image 2">
+        </div>
+      </div>
+    </div>
+    <div id="feedback" class="feedback-text"></div>
+  </div>
+</div>
+
+  <!-- Centered Text Between Section 2 and Section 3 -->
+  <div class="centered-text">
+    <p>It hasn't even been 4 hours and the video has gone viral. <br>
+	The company stocks are falling and the board has called Samantha. </p>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section section-3" id="section3">
+    <div class="image-container">
+      <img src="hr1.jpg" alt="Third Image">
+    </div>
+  </div>
+
+  <!-- Centered Text After Section 3 -->
+  <div class="centered-text">
+    <p>Samantha has been fired, but made to pretend that she's resiggning.<br>
+	Her career has taken a hit in 4 hours. Everything she has worked <br>
+	for gone to dust because company wants to save their reputation.</p>
+  </div>
+
+  <!-- New Section with Two Images (Left and Right) -->
+  <div class="two-image-section">
+    <div class="left-box">
+      <h2>Learn More About Deepfakes</h2>
+      <a href="https://www.youtube.com/watch?v=pkF3m5wVUYI&t=71s/">
+        <img src="utube.jpeg" alt="Left Image">
+      </a>
+    </div>
+    <div class="right-image">
+      <img src="Untitled (18).jpg" alt="Right Image">
+    </div>
+  </div>
+  
+  <a href="typing.html">
+    <button style="position:absolute; top:4080px; left:700px; font-size:30px; background-color:#d3d3d3; z-index:2;">GO BACK</button>
+  </a>
+
+  <script>
+    // Function to show feedback text when image is clicked
+    document.getElementById('image1').addEventListener('click', function() {
+      document.getElementById('feedback').textContent = 'This is a deepfake!';
+      document.getElementById('feedback').style.display = 'block'; // Show feedback text
+    });
+
+    document.getElementById('image2').addEventListener('click', function() {
+      document.getElementById('feedback').textContent = 'Correct Answer!';
+      document.getElementById('feedback').style.display = 'block'; // Show feedback text
+    });
+
+    // Function to check if an element is in the viewport
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom >= 0;
+    }
+
+    // Add event listener for scroll
+    window.addEventListener('scroll', function() {
+      // Get all sections
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(function(section) {
+        if (isInViewport(section)) {
+          section.classList.add('visible'); // Add visible class when section is in viewport
+        }
+      });
+
+      // Get all image containers (for image animation)
+      const imageContainers = document.querySelectorAll('.image-container');
+      imageContainers.forEach(function(imageContainer) {
+        if (isInViewport(imageContainer)) {
+          imageContainer.classList.add('visible'); // Add visible class for the image
+        }
+      });
+    });
+
+    // Initial check on page load to trigger animation
+    window.dispatchEvent(new Event('scroll'));
+  </script>
+
+</body>
+</html>
